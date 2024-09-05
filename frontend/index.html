@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <header>
+      <h1>Hællæ</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form method="POST">
+        <label for="name">Project name</label>
+        <input type="text" name="name" id="name" />
+        <label for="description">Description</label>
+        <input type="textarea" id="description" />
+        <label for="startdate">Start date</label>
+        <input type="date" id="startdate" />
+        <label for="enddate">End date</label>
+        <input type="date" id="enddate" />
+        <input type="submit" id="submit" />
+      </form>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

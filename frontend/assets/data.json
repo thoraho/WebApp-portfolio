@@ -1,0 +1,17 @@
+[
+        {
+            "id": 1,
+            "name": "Project 1",
+            "description": "This is project 1",
+            "startDate": {
+                "day": 1,
+                "month": 1,
+                "year": 2022
+            },
+            "endDate": {
+                "day": 1,
+                "month": 1,
+                "year": 2023
+            }
+    }  
+]
