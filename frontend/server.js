@@ -1,43 +1,56 @@
-import { serve } from "@hono/node-server";
-import { Hono } from "hono";
-import { cors } from "hono/cors";
-import { serveStatic } from "@hono/node-server/serve-static";
-import { } from "fs/promises";
+// import { serve } from "@hono/node-server";
+// import { Hono } from "hono";
+// import { cors } from "hono/cors";
+// import { serveStatic } from "@hono/node-server/serve-static";
+// import { readFile, writeFile } from "fs/promises";
 
-const app = new Hono();
 
-app.use("/*", cors());
+// async function fetchProjects() {
+//   const data = await readFile("./assets/data.json", "utf-8");
+//   return JSON.parse(data);
+// }
 
-app.use("/static/*", serveStatic({ root: "./" }));
 
-const projects = [
-  {
-    id: crypto.randomUUID(),
-    title: "Project",
-    createdAt: new Date("2024-01-01"),
-  },
-];
+// const app = new Hono();
 
-app.post("/add", async (c) => {
-  const newProject = await c.req.json();
-  const project = ProjectSchema.parse(newProject);
-  if (!project) return c.json({ error: "Invalid project" }, { status: 400 });
-  console.log(project);
-  projects.push(project);
+// app.use("/*", cors());
 
-  return c.json(projects, { status: 201 });
-});
+// app.use("/static/*", serveStatic({ root: "./" }));
 
-app.get("/", (c) => {
+// app.get("/", async (c) => {
+//   const data = await readFile("./assets/data.json", "utf-8");
+//   const parsedData = JSON.parse(data);
+//   console.log(parsedData);
+  
+//   return c.json(parsedData);
+// });
 
-  return c.json(projects);
-});
+// app.post("/", async (c) => {
+//   try {
+//     const data = await readFile("./assets/data.json", "utf-8");
+//     const parsedData = JSON.parse(data);
+//     const body = await c.req.json();
 
-const port = 3000;
+//     if (!body.name || !body.description || !body.startDate || !body.endDate) {
+//       return c.json({ error: "Missing required fields" }, 401); 
+//     }
 
-console.log(`Server is running on port ${port}`);
+//     parsedData.push(body);
 
-serve({
-  fetch: app.fetch,
-  port,
-});
+//     await writeFile("./assets/data.json", JSON.stringify(parsedData, null, 2));
+//     return c.json({ message: "Project added" }, 201);
+//   } catch (error) {
+//     console.error("Error while adding project:", error);
+//     return c.json({ error: "Internal Server Error" }, 500);
+//   }});
+
+
+
+// const port = 3000;
+
+// console.log(`Server is running on port ${port}`);
+
+// serve({
+//   fetch: app.fetch,
+//   port,
+// });

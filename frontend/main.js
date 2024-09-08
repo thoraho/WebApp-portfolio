@@ -1,18 +1,24 @@
-import './style.css';
+import { fetchProjects, addProject } from "./lib.js";
+import './style.css'
 
-const submitBtn = document.getElementById('submit');
+fetchProjects();
 
-submitBtn.addEventListener('click', (e) => {
+const projectForm = document.querySelector('form');
+
+projectForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('Clicked');
+    
+    const name = document.getElementById('name').value;
+    const description = document.getElementById('description').value;
+    const startDate = document.getElementById('startdate').value;
+    const endDate = document.getElementById('enddate').value;
+
+
+    if (!name || !description || !startDate || !endDate) {
+        alert("All fields are required!");
+        return;
+    }
+
+
+    addProject({ name, description, startDate, endDate });
 });
-
-function getData(){
-    const response = fetch('http://localhost:3000')
-    .then(response => response.json())
-    .then(data => console.log(data))
-}
-
-getData();
-
-
