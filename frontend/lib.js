@@ -17,7 +17,7 @@ export async function fetchProjects() {
         console.log(parsedData);
 
         projectContainer.innerHTML = '';
-        parsedData.forEach((project) => {
+        parsedData.map((project) => {
             projectContainer.innerHTML += `
                 <article class="project">
                     <h2 >${project.name}</h2>
