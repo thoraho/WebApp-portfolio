@@ -17,7 +17,7 @@ export async function fetchProjects() {
         console.log(parsedData);
 
         projectContainer.innerHTML = '';
-        parsedData.map((project) => {
+        parsedData.map ((project) => {
             projectContainer.innerHTML += `
                 <article class="project">
                     <h2 >${project.name}</h2>
@@ -31,6 +31,7 @@ export async function fetchProjects() {
         alert('Could not fetch projects. Please try again later.');
     }
 }
+
 
 export async function addProject(project) {
     try {
