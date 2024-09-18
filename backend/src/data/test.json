@@ -1,0 +1,24 @@
+ [
+    {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "title": "Grapic Design",
+      "projects": [
+        {
+          "id": "123e4567-e89b-12d3-a456-426614174001",
+          "title": "GD project 1",
+          "description": "This is GD project 1",
+          "startDate": "01.01.2022",
+          "endDate": "31.12.2022",
+          "status": "active"
+        },
+        {
+          "id": "123e4567-e89b-12d3-a456-426614174002",
+          "title": "GD project 2",
+          "description": "This is GD project 2",
+          "startDate": "01.01.2022",
+          "endDate": "31.12.2022",
+          "status": "active"
+        }
+      ]
+    }
+  ]

@@ -1,33 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react"
+import { H1Title, H2Title } from "./components/Titles"
+import { initData, initProjects } from "./lib"
+import Card from "./components/Card"
+import Header from "./components/Header"
+import Form from "./components/Form"
+import MobileBar from "./components/MobileBar"
 
 function App() {
-  const [count, setCount] = useState(0)
+  interface Project {
+    projects?: Project[]
+    description: string
+    id: number
+    title: string
+    startDate: string
+    endDate: string
+    status: string
+  }
+
+  const [projects, setProjects] = useState<Project[]>([])
+
+  useEffect(() => {
+    console.clear()
+    initData().then((data) => {
+      setProjects(data)
+    })
+  }, [])
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <Form />
+      <MobileBar />
+      <section className="projects-section">
+        {projects?.map((project) => {
+          return (
+            <article
+              key={project.id}
+              className={
+                project.status === "active"
+                  ? `active project-card`
+                  : "project-card"
+              }
+            >
+              <Card
+                title={project.title}
+                description={project.description}
+                start_date={project.startDate}
+                end_date={project.endDate}
+                status={project.status}
+              />
+            </article>
+          )
+        })}
+      </section>
     </>
   )
 }
