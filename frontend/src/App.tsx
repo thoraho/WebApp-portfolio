@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react"
-import { H1Title, H2Title } from "./components/Titles"
-import { initData, initProjects } from "./lib"
+import { initData } from "./lib"
 import Card from "./components/Card"
 import Header from "./components/Header"
 import Form from "./components/Form"
-import MobileBar from "./components/MobileBar"
 
 function App() {
   interface Project {
@@ -14,7 +12,7 @@ function App() {
     title: string
     startDate: string
     endDate: string
-    status: string
+    status?: "planned" | "ongoing" | "completed"
   }
 
   const [projects, setProjects] = useState<Project[]>([])
@@ -30,15 +28,14 @@ function App() {
     <>
       <Header />
       <Form />
-      <MobileBar />
       <section className="projects-section">
         {projects?.map((project) => {
           return (
             <article
               key={project.id}
               className={
-                project.status === "active"
-                  ? `active project-card`
+                project.status
+                  ? `project-card ${project.status}`
                   : "project-card"
               }
             >

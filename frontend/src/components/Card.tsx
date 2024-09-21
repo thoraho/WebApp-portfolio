@@ -6,7 +6,7 @@ type ProjectType = {
   description: string
   start_date: string
   end_date: string
-  status: string
+  status: "planned" | "ongoing" | "completed"
 }
 
 export default function Card(props: ProjectType) {
@@ -23,6 +23,7 @@ export default function Card(props: ProjectType) {
       <H2Title text={title} />
       <p>{description}</p>
       <p>{`${start_date} - ${end_date}`}</p>
+      <span className={`status ${status}`}>{status.toUpperCase()}</span>
     </>
   )
 }

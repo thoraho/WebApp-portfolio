@@ -1,15 +1,35 @@
 export default function Form() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const form = e.currentTarget
-    const formData = new FormData(form)
-    const data = Object.fromEntries(formData)
+    const projectName = (
+      document.getElementById("projectname") as HTMLInputElement
+    ).value
+    const projectDesc = (
+      document.getElementById("projectdesc") as HTMLTextAreaElement
+    ).value
+    const startDate = (document.getElementById("startdate") as HTMLInputElement)
+      .value
+    const endDate = (document.getElementById("enddate") as HTMLInputElement)
+      .value
+    const status = (document.getElementById("status") as HTMLSelectElement)
+      .value
+
+    const data = {
+      id: crypto.randomUUID(),
+      projectName,
+      projectDesc,
+      startDate,
+      endDate,
+      status,
+    }
+
     console.log(data)
   }
 
   return (
     <div id="formcontainer">
-      <form method="post" id="projform">
+      <form method="post" id="projform" onSubmit={handleSubmit}>
+        <h2>Post a project</h2>
         <label htmlFor="projectname">
           Project Name:
           <input type="text" id="projectname" name="projectname" />
@@ -26,7 +46,15 @@ export default function Form() {
           End Date:
           <input type="date" id="enddate" name="enddate" />
         </label>
-        <input type="submit" value="Post project" />
+        <label htmlFor="status">
+          Status:
+          <select id="status" name="status">
+            <option value="planned">Planned</option>
+            <option value="ongoing">Ongoing</option>
+            <option value="completed">Completed</option>
+          </select>
+        </label>
+        <button type="submit">Submit</button>
       </form>
     </div>
   )

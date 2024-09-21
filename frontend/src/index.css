@@ -13,6 +13,9 @@
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
 
+  --border: 3px solid var(--bs-gray);
+  --border-radius: 8px;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -25,8 +28,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --border: 1px solid var(--bs-gray);
-  --border-radius: 8px;
 }
 
 * {
@@ -50,9 +51,10 @@ body {
 }
 
 header {
+  position: sticky;
+  top: 0;
   width: 100%;
   padding: 0 1rem;
-  filter: drop-shadow(0.5rem 0.5rem 0.2rem rgba(0, 0, 0, 0.5));
   background-color: var(--bs-blue);
   display: flex;
   justify-content: space-around;
@@ -97,6 +99,7 @@ button:focus-visible {
   margin: 1rem;
 
   .project-card {
+    position: relative;
     display: flex;
     cursor: pointer;
     flex-direction: column;
@@ -112,6 +115,21 @@ button:focus-visible {
       transform: scale(1.05);
       &:active {
         transform: scale(1.03);
+      }
+    }
+    .status {
+      position: absolute;
+      top: 2rem;
+      right: -4rem;
+      padding: 0.5rem;
+      border-radius: var(--border-radius);
+      background-color: var(--bs-red);
+      transform: rotate(90deg);
+      &.ongoing {
+        background-color: var(--bs-yellow);
+      }
+      &.completed {
+        background-color: var(--bs-green);
       }
     }
   }
