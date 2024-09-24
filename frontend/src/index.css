@@ -46,8 +46,14 @@ a {
 
 body {
   margin: 0;
-  min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  padding: 1rem;
+  min-height: 100dvh;
 }
 
 header {
@@ -60,6 +66,7 @@ header {
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
+  z-index: 100;
   #main-nav {
     display: flex;
     gap: 2rem;
@@ -94,43 +101,56 @@ button:focus-visible {
 .projects-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   gap: 2rem;
-  margin: 1rem;
+}
 
-  .project-card {
-    position: relative;
-    display: flex;
-    cursor: pointer;
-    flex-direction: column;
-    align-items: left;
-    padding: 1rem 2rem;
-    border: var(--border);
+.project-card {
+  * {
+    margin: 0;
+  }
+  position: relative;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  display: flex;
+  gap: 0.1rem;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  width: fit-content;
+  h3 {
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  .date {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .project-description {
+    max-width: 20ch;
+  }
+  .project-link {
+    align-self: center;
+    background-color: var(--bs-blue);
+    padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
-    transition: transform 0.25s;
-    &.active {
-      border: var(--border);
+    text-decoration: none;
+    transition: transform 0.1s;
+  }
+  .status {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--border-radius);
+    border: var(--border);
+    color: var(--bs-white);
+    max-width: min-content;
+    &.ongoing {
+      border-color: var(--bs-yellow);
     }
-    &:hover {
-      transform: scale(1.05);
-      &:active {
-        transform: scale(1.03);
-      }
-    }
-    .status {
-      position: absolute;
-      top: 2rem;
-      right: -4rem;
-      padding: 0.5rem;
-      border-radius: var(--border-radius);
-      background-color: var(--bs-red);
-      transform: rotate(90deg);
-      &.ongoing {
-        background-color: var(--bs-yellow);
-      }
-      &.completed {
-        background-color: var(--bs-green);
-      }
+    &.completed {
+      border-color: var(--bs-green);
     }
   }
 }

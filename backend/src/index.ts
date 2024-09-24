@@ -17,13 +17,17 @@ app.get("/projects", async (c) => {
   }
 })
 
-app.get("/about", async (c) => {
+app.post("/projects", async (c) => {
+  const data = await c.req.json<any>()
   try {
-    const data = await fs.readFile("src/data/test.json", "utf-8")
-    const test = JSON.parse(data)
-    return c.json(test)
+    const projects = JSON.parse(
+      await fs.readFile("src/data/projects.json", "utf-8")
+    )
+    projects.push(data)
+    await fs.writeFile("src/data/projects.json", JSON.stringify(projects))
+    return c.json({ data: projects })
   } catch (error) {
-    return c.json({ error: "Failed to read about.json" }, 500)
+    return c.json({ error: "Failed to write projects.json" }, 500)
   }
 })
 
