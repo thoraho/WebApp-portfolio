@@ -1,6 +1,6 @@
 [
   {
-    "projectOwner": "Microsoft",
+    "owner": "Microsoft",
     "id": "1",
     "title": "Project 1",
     "description": "This is the description of project 1",
@@ -9,7 +9,7 @@
     "status": "planned"
   },
   {
-    "projectOwner": "Facebook",
+    "owner": "Facebook",
     "id": "2",
     "title": "Project 2",
     "description": "This is the description of project 2",
@@ -18,7 +18,7 @@
     "status": "ongoing"
   },
   {
-    "projectOwner": "Google",
+    "owner": "Google",
     "id": "3",
     "title": "Project 3",
     "description": "This is the description of project 3",
