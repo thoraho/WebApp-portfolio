@@ -1,7 +1,7 @@
 export function LogoMain() {
   return (
     <>
-      <span className="logo main">Logo</span>
+      <span className="logo main">Thorfolio</span>
     </>
   )
 }
@@ -9,7 +9,7 @@ export function LogoMain() {
 export function LogoSmall() {
   return (
     <>
-      <span className="logo small">Logo</span>
+      <span className="logo small">Thorfolio</span>
     </>
   )
 }

@@ -15,13 +15,22 @@
   --primary: #646cff;
   --secondary: #535bf2;
   --light: #f9f9f9;
+  --dark: #363636;
+
+  --completed: #00b894;
+  --ongoing: #fdcb6e;
+  --planned: #ff7675;
 
   --btn-background: #1a1a1a;
   --btn-hover: #646cff;
+  --btn-delete-hover: #ff7675;
 
   --spacing-lg: 2rem;
   --spacing-md: 1.5rem;
   --spacing-sm: 1rem;
+
+  --border: 3px solid var(--primary);
+  --border-radius: 0.5rem;
 }
 
 a {
@@ -52,7 +61,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   .navigation.main {
     display: flex;
     gap: var(--spacing-md);
@@ -65,14 +74,18 @@ header {
   }
 }
 
+body {
+  min-height: 100dvh;
+}
+
 main {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: var(--spacing-lg);
   padding: 1rem;
-  min-width: 100dvw;
-  min-height: 100dvh;
+  height: 100%;
 }
 
 h1 {
@@ -114,21 +127,78 @@ button:focus-visible {
 
 .projects-section {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-between;
   gap: 1.6em;
-}
 
-.add-project-form {
-  form {
+  .project-card {
+    * {
+      margin: 0;
+    }
+    position: relative;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm);
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
-    max-width: 500px;
-    label {
-      font-size: 1.2em;
-      font-weight: 500;
+    max-height: fit-content;
+    .description {
+      max-width: 20ch;
     }
+    .status {
+      font-weight: 700;
+      border: var(--border);
+      border-color: var(--planned);
+      border-radius: var(--border-radius);
+      max-width: fit-content;
+      padding: 0.5rem;
+      &.ongoing {
+        border-color: var(--ongoing);
+      }
+      &.completed {
+        border-color: var(--completed);
+      }
+    }
+
+    &:hover {
+      border-radius: 0;
+      border-color: var(--btn-delete-hover);
+      .delete-btn {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.delete-btn {
+  opacity: 0;
+  position: absolute;
+  background-color: var(--btn-delete-hover);
+  transition: background-color 0.2s, opacity 0.5s;
+  right: 0;
+  top: -2.6rem;
+  width: 100%;
+  &:hover {
+    background-color: var(--btn-delete-hover);
+  }
+}
+
+.project-owner {
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  max-width: 500px;
+  label {
+    font-size: 1.2em;
+    font-weight: 500;
   }
 }
 

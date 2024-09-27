@@ -1,26 +1,26 @@
 [
   {
-    "owner": "Microsoft",
+    "owner": "Thor Andreas Holberg Murtnes-Hatlestad",
     "id": "1",
-    "title": "Project 1",
-    "description": "This is the description of project 1",
-    "start_date": "01.01.2022",
-    "end_date": "31.12.2022",
+    "title": "Webutvikling",
+    "description": "Beskrivelse av prosjektet",
+    "start_date": "25.08.2022",
+    "end_date": "04.12.2022",
     "status": "planned"
   },
   {
-    "owner": "Facebook",
+    "owner": "Thor Andreas Holberg Murtnes-Hatlestad",
     "id": "2",
-    "title": "Project 2",
-    "description": "This is the description of project 2",
-    "start_date": "01.02.2022",
-    "end_date": "31.02.2023",
+    "title": "Designmetode",
+    "description": "Beskrivelse av prosjektet",
+    "start_date": "25.08.2022",
+    "end_date": "04.12.2022",
     "status": "ongoing"
   },
   {
-    "owner": "Google",
+    "owner": "Thor Andreas Holberg Murtnes-Hatlestad",
     "id": "3",
-    "title": "Project 3",
+    "title": "Utvikling av interaktive nettsteder",
     "description": "This is the description of project 3",
     "start_date": "01.02.2022",
     "end_date": "31.02.2023",
