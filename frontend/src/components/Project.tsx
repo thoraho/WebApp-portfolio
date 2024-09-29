@@ -4,7 +4,7 @@ export default function Project(props: ProjectProps) {
   const { id, title, description, owner, status, deleteProject } = props
   return (
     <>
-      <article className={`project-card ${status}`}>
+      <article className={`card project`}>
         <section>
           <span className="project-owner">{owner}</span>
           <h2>{title}</h2>

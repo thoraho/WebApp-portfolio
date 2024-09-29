@@ -31,7 +31,9 @@
   --spacing-xl: 3rem;
 
   --border: 3px solid var(--light);
-  --border-radius: 0.5rem;
+  --border-radius: 0.1rem;
+
+  --font-heading: "Bebas Neue", sans-serif;
 }
 
 a {
@@ -50,14 +52,24 @@ body {
 }
 
 .logo {
+  img {
+    width: 5rem;
+  }
   color: var(--primary);
   display: flex;
   justify-content: center;
+  gap: 1rem;
   align-items: center;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  &:hover {
+    color: var(--primary);
+  }
 }
 
 header {
   padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--dark);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -90,8 +102,19 @@ main {
 }
 
 h1 {
+  font-family: var(--font-heading);
   font-size: 3.2em;
   line-height: 1.1;
+  color: var(--primary);
+  margin: 0;
+}
+
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-size: 1.6em;
+  margin: 0;
+  color: var(--primary);
 }
 
 button {
@@ -103,14 +126,10 @@ button {
   font-family: inherit;
   background-color: var(--btn-background);
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: var(--btn-hover);
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: 0.25s;
+  &:hover {
+    background-color: var(--btn-hover);
+  }
 }
 
 .projects-section {
@@ -122,7 +141,7 @@ button:focus-visible {
   gap: 1.6em;
 }
 
-.project-card {
+.card {
   * {
     margin: 0;
   }
@@ -135,30 +154,32 @@ button:focus-visible {
   gap: var(--spacing-sm);
   max-height: fit-content;
   transition: border-color 0.25s;
-  .description {
-    max-width: 20ch;
-  }
-  .status {
-    font-weight: 700;
-    border: var(--border);
-    border-color: var(--planned);
-    border-radius: var(--border-radius);
-    max-width: fit-content;
-    padding: 0.2rem 0.5rem;
-    &.ongoing {
-      border-color: var(--ongoing);
+  &.project {
+    .description {
+      max-width: 20ch;
     }
-    &.completed {
-      border-color: var(--completed);
+    .status {
+      font-weight: 700;
+      border: var(--border);
+      border-color: var(--planned);
+      border-radius: var(--border-radius);
+      max-width: fit-content;
+      padding: 0.2rem 0.5rem;
+      &.ongoing {
+        border-color: var(--ongoing);
+      }
+      &.completed {
+        border-color: var(--completed);
+      }
     }
-  }
 
-  &:hover {
-    border-color: var(--btn-delete-hover);
-    .delete-btn {
-      opacity: 1;
-      height: auto;
-      padding: 1rem;
+    &:hover {
+      border-color: var(--btn-delete-hover);
+      .delete-btn {
+        opacity: 1;
+        height: auto;
+        padding: 1rem;
+      }
     }
   }
 }

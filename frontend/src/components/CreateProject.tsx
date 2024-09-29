@@ -30,8 +30,8 @@ export default function CreateProject(props: FormProps) {
 
   return (
     <section className="add-project-form">
-      <h2>Nytt prosjekt</h2>
       <form onSubmit={handleSubmit}>
+        <h2>Nytt prosjekt</h2>
         <label htmlFor="title">Tittel</label>
         <input
           required
