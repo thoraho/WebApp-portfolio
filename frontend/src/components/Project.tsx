@@ -5,16 +5,15 @@ export default function Project(props: ProjectProps) {
   return (
     <>
       <article className={`project-card ${status}`}>
-        <button className="delete-btn" onClick={() => deleteProject(id)}>
-          Delete
-        </button>
         <section>
           <span className="project-owner">{owner}</span>
           <h2>{title}</h2>
           <p className="description">{description}</p>
         </section>
         <span className={`status ${status}`}>{status.toUpperCase()}</span>
-        <button>{title}</button>
+        <button className="delete-btn" onClick={() => deleteProject(id)}>
+          Slett
+        </button>
       </article>
     </>
   )

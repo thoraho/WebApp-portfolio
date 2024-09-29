@@ -30,9 +30,9 @@ export default function CreateProject(props: FormProps) {
 
   return (
     <section className="add-project-form">
-      <h2>Add a Project</h2>
+      <h2>Nytt prosjekt</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title</label>
+        <label htmlFor="title">Tittel</label>
         <input
           required
           onChange={handleChange}
@@ -40,13 +40,13 @@ export default function CreateProject(props: FormProps) {
           id="title"
           name="title"
         />
-        <label htmlFor="description">Description</label>
+        <label htmlFor="description">Beskrivelse</label>
         <textarea
           id="description"
           onChange={handleChange}
           name="description"
         ></textarea>
-        <label htmlFor="owner">Owner</label>
+        <label htmlFor="owner">Projekteier</label>
         <input type="text" onChange={handleChange} id="owner" name="owner" />
         <label htmlFor="status">Status</label>
         <select
@@ -63,7 +63,7 @@ export default function CreateProject(props: FormProps) {
           <option value="ongoing">Ongoing</option>
           <option value="completed">Completed</option>
         </select>
-        <button type="submit">Add Project</button>
+        <button type="submit">Legg til prosjekt</button>
       </form>
     </section>
   )

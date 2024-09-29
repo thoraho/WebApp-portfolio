@@ -21,16 +21,21 @@ export default function ContactForm({ student }: ContactFromProps) {
     }))
   }
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    console.log(message)
+  }
+
   return (
     <>
-      <h2>Contact</h2>
-      <form>
-        <label htmlFor="name">Name</label>
-        <input type="text" id="name" name="name" />
-        <label htmlFor="message">Message</label>
-        <textarea id="message" name="message" />
-        <button onClick={() => alert(`Email sent to ${email}`)}>
-          Send Email
+      <h2>Kontakt</h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Navn</label>
+        <input type="text" id="name" name="name" onChange={handleChange} />
+        <label htmlFor="message">Melding</label>
+        <textarea id="message" onChange={handleChange} name="message" />
+        <button onClick={() => alert(`E-post sendt til ${email}`)}>
+          Send melding
         </button>
       </form>
     </>

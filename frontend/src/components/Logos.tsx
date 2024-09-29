@@ -1,7 +1,13 @@
+import { Link } from "react-router-dom"
+import LogoSVG from "../assets/logo.svg"
+
 export function LogoMain() {
   return (
     <>
-      <span className="logo main">Thorfolio</span>
+      <Link className="logo main" to="/">
+        <img src={LogoSVG} alt="logo" />
+        <h2>Thorfolio</h2>
+      </Link>
     </>
   )
 }
@@ -9,7 +15,7 @@ export function LogoMain() {
 export function LogoSmall() {
   return (
     <>
-      <span className="logo small">Thorfolio</span>
+      <span className="logo small">TF</span>
     </>
   )
 }

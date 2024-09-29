@@ -3,15 +3,15 @@ import { useLocation, Link } from "react-router-dom"
 export default function Nav() {
   const navItems = [
     {
-      title: "Home",
+      title: "Hjem",
       url: "/",
     },
     {
-      title: "Projects",
+      title: "Prosjekter",
       url: "/projects",
     },
     {
-      title: "Contact",
+      title: "Kontakt",
       url: "/contact",
     },
   ]

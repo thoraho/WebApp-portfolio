@@ -12,18 +12,17 @@ export default function ProjectsGrid(props: ProjectsGridProps) {
   const { projects, addProject, deleteProject } = props
   return (
     <>
+      <h2>Prosjekt</h2>
       {projects.length === 0 ? (
         <>
-          <h2>Projects</h2>
-          <h3>No projects found</h3>
+          <h3>Ingen prosjekter funnet</h3>
         </>
       ) : (
         <>
-          <h2>Projects</h2>
           <h3>
             {projects.length === 1
-              ? projects.length + " project"
-              : projects.length + " projects"}
+              ? projects.length + " Prosjekt"
+              : projects.length + " Prosjekter"}
           </h3>
           <section className="projects-section">
             {projects.map((project) => (

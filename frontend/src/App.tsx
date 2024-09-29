@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom"
 import { ProjectProps } from "./types"
 import ProjectsGrid from "./components/ProjectsGrid"
 import ContactForm from "./components/ContactForm"
+import Student from "./components/Student"
 
 const initStudent = {
   name: "Thor Andreas Holberg Murtnes-Hatlestad",
@@ -43,7 +44,7 @@ function App() {
     <>
       <Layout>
         <Routes>
-          <Route path="/" element={<h1>PORTFOLIO</h1>} />
+          <Route path="/" element={<Student student={student} />} />
           <Route
             path="/projects"
             element={
