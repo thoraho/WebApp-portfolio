@@ -7,9 +7,9 @@ type FormProps = {
 }
 
 export default function CreateProject(props: FormProps) {
-  const [newProject, setNewProject] = useState({})
   const { projects, addProject } = props
 
+  const [newProject, setNewProject] = useState({})
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement

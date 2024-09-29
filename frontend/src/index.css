@@ -130,7 +130,7 @@ button:focus-visible {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1.6em;
 
   .project-card {
@@ -180,7 +180,6 @@ button:focus-visible {
   transition: background-color 0.2s, opacity 0.5s;
   right: 0;
   top: -2.6rem;
-  width: 100%;
   &:hover {
     background-color: var(--btn-delete-hover);
   }

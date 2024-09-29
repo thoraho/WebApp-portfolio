@@ -20,7 +20,11 @@ export default function ProjectsGrid(props: ProjectsGridProps) {
       ) : (
         <>
           <h2>Projects</h2>
-          <h3>{projects.length} projects found</h3>
+          <h3>
+            {projects.length === 1
+              ? projects.length + " project"
+              : projects.length + " projects"}
+          </h3>
           <section className="projects-section">
             {projects.map((project) => (
               <Project
@@ -29,8 +33,8 @@ export default function ProjectsGrid(props: ProjectsGridProps) {
                 deleteProject={deleteProject}
               />
             ))}
-            <CreateProject projects={projects} addProject={addProject} />
           </section>
+          <CreateProject projects={projects} addProject={addProject} />
         </>
       )}
     </>

@@ -6,7 +6,16 @@ import { ProjectProps } from "./types"
 import ProjectsGrid from "./components/ProjectsGrid"
 import ContactForm from "./components/ContactForm"
 
+const initStudent = {
+  name: "Thor Andreas Holberg Murtnes-Hatlestad",
+  email: "thoraho@hiof.no",
+}
+
 function App() {
+  const [student, setStudent] = useState({
+    name: "",
+    email: "",
+  })
   const [projects, setProjects] = useState<ProjectProps[]>([])
 
   useEffect(() => {
@@ -45,7 +54,7 @@ function App() {
               />
             }
           />
-          <Route path="/contact" element={<ContactForm />} />
+          <Route path="/contact" element={<ContactForm student={student} />} />
         </Routes>
       </Layout>
     </>

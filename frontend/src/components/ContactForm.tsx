@@ -1,4 +1,13 @@
-export default function ContactForm() {
+type ContactFromProps = {
+  student: {
+    name: string
+    email: string
+  }
+}
+
+export default function ContactForm({ student }: ContactFromProps) {
+  const { name, email } = student
+
   return (
     <>
       <h2>Contact</h2>
