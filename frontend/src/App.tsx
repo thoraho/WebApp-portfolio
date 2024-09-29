@@ -9,13 +9,13 @@ import ContactForm from "./components/ContactForm"
 const initStudent = {
   name: "Thor Andreas Holberg Murtnes-Hatlestad",
   email: "thoraho@hiof.no",
+  degree: "Computer Science",
+  university: "Østfold University College",
+  graduationYear: 2025,
 }
 
 function App() {
-  const [student, setStudent] = useState({
-    name: "",
-    email: "",
-  })
+  const [student, setStudent] = useState(initStudent)
   const [projects, setProjects] = useState<ProjectProps[]>([])
 
   useEffect(() => {
