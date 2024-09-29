@@ -12,7 +12,7 @@ export default function ProjectsGrid(props: ProjectsGridProps) {
   const { projects, addProject, deleteProject } = props
   return (
     <>
-      <h1>Prosjekt</h1>
+      <h1>Prosjekter ({projects.length})</h1>
       {projects.length === 0 ? (
         <>
           <h3>Ingen prosjekter funnet</h3>

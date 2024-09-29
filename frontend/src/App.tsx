@@ -9,10 +9,25 @@ import Student from "./components/Student"
 
 const initStudent = {
   name: "Thor Andreas Holberg Murtnes-Hatlestad",
+  age: new Date().getFullYear() - 1990,
   email: "thoraho@hiof.no",
-  degree: "Computer Science",
+  degree: "Digitale medier og design",
   university: "Østfold University College",
   graduationYear: 2025,
+  experience: [
+    {
+      title: "Frontend Developer",
+      company: "Itera ASA",
+      startDate: "2021-01-01",
+      endDate: "2021-12-31",
+    },
+    {
+      title: "Web Developer",
+      company: "Netlife Design",
+      startDate: "2020-01-01",
+      endDate: "2020-12-31",
+    },
+  ],
 }
 
 function App() {

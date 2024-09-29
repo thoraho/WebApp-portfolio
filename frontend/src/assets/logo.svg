@@ -7,11 +7,14 @@
       }
 
       .cls-2 {
-        fill: #535bf2;
+        stroke: #646cff;
+        fill: transparent;
+        
       }
 
       .cls-3 {
-        fill: #646cff;
+        stroke: #646cff;
+        fill: transparent;
       }
     </style>
   </defs>

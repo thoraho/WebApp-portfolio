@@ -101,20 +101,23 @@ main {
   height: 100%;
 }
 
-h1 {
-  font-family: var(--font-heading);
-  font-size: 3.2em;
-  line-height: 1.1;
-  color: var(--primary);
-  margin: 0;
-}
-
+h1,
 h2,
 h3 {
-  font-family: var(--font-heading);
-  font-size: 1.6em;
-  margin: 0;
   color: var(--primary);
+  font-family: var(--font-heading);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 button {
@@ -178,7 +181,7 @@ button {
       .delete-btn {
         opacity: 1;
         height: auto;
-        padding: 1rem;
+        padding: 0.5rem 1rem;
       }
     }
   }
@@ -192,7 +195,7 @@ button {
   height: 0;
   padding: 0;
   width: fit-content;
-  transition: all 0.25s, color 0.25s;
+  transition: all 0.25s;
 
   &:hover {
     background-color: var(--btn-delete-hover);

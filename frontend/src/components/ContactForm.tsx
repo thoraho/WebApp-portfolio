@@ -28,8 +28,8 @@ export default function ContactForm({ student }: ContactFromProps) {
 
   return (
     <>
-      <h2>Kontakt</h2>
       <form onSubmit={handleSubmit}>
+        <h2>Kontakt</h2>
         <label htmlFor="name">Navn</label>
         <input type="text" id="name" name="name" onChange={handleChange} />
         <label htmlFor="message">Melding</label>
