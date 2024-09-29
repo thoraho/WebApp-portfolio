@@ -29,7 +29,7 @@ export default function ContactForm({ student }: ContactFromProps) {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h2>Kontakt</h2>
+        <h2>Skriv til kødden</h2>
         <label htmlFor="name">Navn</label>
         <input type="text" id="name" name="name" onChange={handleChange} />
         <label htmlFor="message">Melding</label>
