@@ -34,9 +34,9 @@ export default function ProjectsGrid(props: ProjectsGridProps) {
               />
             ))}
           </section>
-          <CreateProject projects={projects} addProject={addProject} />
         </>
       )}
+      <CreateProject projects={projects} addProject={addProject} />
     </>
   )
 }

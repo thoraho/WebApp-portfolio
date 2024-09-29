@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 type ContactFromProps = {
   student: {
     name: string
@@ -7,6 +9,17 @@ type ContactFromProps = {
 
 export default function ContactForm({ student }: ContactFromProps) {
   const { name, email } = student
+
+  const [message, setMessage] = useState({})
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setMessage((prevMessage) => ({
+      ...prevMessage,
+      [e.target.name]: e.target.value,
+    }))
+  }
 
   return (
     <>
