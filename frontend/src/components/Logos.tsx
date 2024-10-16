@@ -2,21 +2,22 @@ import { Link } from "react-router-dom"
 import LogoSVG from "../assets/logo.svg"
 import cLogo from "../assets/clogo.svg"
 
-export function LogoMain() {
+export function LogoLandscape() {
   return (
     <>
-      <Link className="logo main" to="/">
-        <img src={cLogo} alt="logo" />
-        <h2>Caramello</h2>
+      <Link className="logo landscape" to="/">
+        CARAMELLO
       </Link>
     </>
   )
 }
 
-export function LogoSmall() {
+export function LogoPortrait() {
   return (
     <>
-      <span className="logo small">TF</span>
+      <Link className="logo portrait" to="/">
+        CARAMELLO
+      </Link>
     </>
   )
 }

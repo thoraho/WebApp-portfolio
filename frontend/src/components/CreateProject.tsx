@@ -30,39 +30,47 @@ export default function CreateProject(props: FormProps) {
 
   return (
     <section className="add-project-form">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="card flex col align-start gap1">
         <h2>Nytt prosjekt</h2>
-        <label htmlFor="title">Tittel</label>
-        <input
-          required
-          onChange={handleChange}
-          type="text"
-          id="title"
-          name="title"
-        />
-        <label htmlFor="description">Beskrivelse</label>
-        <textarea
-          id="description"
-          onChange={handleChange}
-          name="description"
-        ></textarea>
-        <label htmlFor="owner">Projekteier</label>
-        <input type="text" onChange={handleChange} id="owner" name="owner" />
-        <label htmlFor="status">Status</label>
-        <select
-          required
-          name="status"
-          defaultValue=""
-          onChange={handleChange}
-          id="status"
-        >
-          <option value="" disabled>
-            Select
-          </option>
-          <option value="planned">Planned</option>
-          <option value="ongoing">Ongoing</option>
-          <option value="completed">Completed</option>
-        </select>
+        <label htmlFor="title">
+          Tittel
+          <input
+            required
+            onChange={handleChange}
+            type="text"
+            id="title"
+            name="title"
+          />
+        </label>
+        <label htmlFor="description">
+          Beskrivelse
+          <textarea
+            id="description"
+            onChange={handleChange}
+            name="description"
+          ></textarea>
+        </label>
+        <label htmlFor="owner">
+          Projekteier
+          <input type="text" onChange={handleChange} id="owner" name="owner" />
+        </label>
+        <label htmlFor="status">
+          Status
+          <select
+            required
+            name="status"
+            defaultValue=""
+            onChange={handleChange}
+            id="status"
+          >
+            <option value="" disabled>
+              Select
+            </option>
+            <option value="planned">Planned</option>
+            <option value="ongoing">Ongoing</option>
+            <option value="completed">Completed</option>
+          </select>
+        </label>
         <button type="submit">Legg til prosjekt</button>
       </form>
     </section>

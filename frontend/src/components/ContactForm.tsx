@@ -28,12 +28,16 @@ export default function ContactForm({ student }: ContactFromProps) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <h2>Skriv til kødden</h2>
-        <label htmlFor="name">Navn</label>
-        <input type="text" id="name" name="name" onChange={handleChange} />
-        <label htmlFor="message">Melding</label>
-        <textarea id="message" onChange={handleChange} name="message" />
+      <form className="card flex col gap1" onSubmit={handleSubmit}>
+        <h2>Skriv en sang eller noe da vel</h2>
+        <label htmlFor="name">
+          Navn
+          <input type="text" id="name" name="name" onChange={handleChange} />
+        </label>
+        <label htmlFor="message">
+          Melding
+          <textarea id="message" onChange={handleChange} name="message" />
+        </label>
         <button onClick={() => alert(`E-post sendt til ${email}`)}>
           Send melding
         </button>

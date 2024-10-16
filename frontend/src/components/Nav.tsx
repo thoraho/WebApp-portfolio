@@ -7,7 +7,7 @@ export default function Nav() {
       url: "/",
     },
     {
-      title: "Prosjekter",
+      title: "Projects",
       url: "/projects",
     },
     {
@@ -23,11 +23,18 @@ export default function Nav() {
       <nav>
         <ul className="navigation main">
           {navItems.map((item) => (
-            <li
-              key={item.title}
-              className={location.pathname === item.url ? "active" : ""}
-            >
-              <Link to={item.url}>{item.title}</Link>
+            <li key={item.title}>
+              <Link
+                className={location.pathname === item.url ? "active" : ""}
+                to={item.url}
+                onClick={() =>
+                  document
+                    .querySelector(".navigation.main")
+                    ?.classList.remove("open")
+                }
+              >
+                {item.title}
+              </Link>
             </li>
           ))}
         </ul>
